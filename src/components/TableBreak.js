@@ -46,7 +46,7 @@ export default function TableBreak() {
   const [extraIsSuccess, setExtraIsSuccess] = useState(true);
 
   const getUsersTable = () => {
-    axios.get(`10.1.178.49:3001/users/table`).then((res) => {
+    axios.get(`/users/table`).then((res) => {
       const persons = res.data;
       setDat(persons);
     });
@@ -72,7 +72,7 @@ export default function TableBreak() {
 
   const exhort = async () => {
     axios
-      .post("10.1.178.49:3001/users/dashboard/apply", bodyParameters, config)
+      .post("/users/dashboard/apply", bodyParameters, config)
       .then((res) => {
         if (res.data === "OK") getUsersTable();
       })
@@ -83,7 +83,7 @@ export default function TableBreak() {
 
   const confirmGoBreak = () => {
     axios
-      .post("10.1.178.49:3001/users/dashboard/go_break", bodyParameters, config)
+      .post("/users/dashboard/go_break", bodyParameters, config)
       .then((res) => {
         if (res.data === "OK") getUsersTable();
       })
@@ -94,11 +94,7 @@ export default function TableBreak() {
 
   const confirmCancelBreak = () => {
     axios
-      .post(
-        "10.1.178.49:3001/users/dashboard/return_break",
-        bodyParameters,
-        config
-      )
+      .post("/users/dashboard/return_break", bodyParameters, config)
       .then((res) => {
         if (res.data === "OK") getUsersTable();
         cancel();
@@ -110,7 +106,7 @@ export default function TableBreak() {
 
   const getCurrent = () => {
     axios
-      .post("10.1.178.49:3001/users/current", bodyParameters, config)
+      .post("/users/current", bodyParameters, config)
       .then((res) => {
         if (res.data.user.userRoll === "ADMIN") {
           setIsAdmin(true);
@@ -128,7 +124,7 @@ export default function TableBreak() {
 
   const cancel = () => {
     axios
-      .post("10.1.178.49:3001/users/dashboard/cancel", bodyParameters, config)
+      .post("/users/dashboard/cancel", bodyParameters, config)
       .then((res) => {
         if (res.data === "OK") getUsersTable();
       })
@@ -147,7 +143,7 @@ export default function TableBreak() {
   const adminApply = async (email) => {
     try {
       const response = await axios.post(
-        "10.1.178.49:3001/users/dashboard/ready",
+        "/users/dashboard/ready",
         JSON.stringify({ email }),
         {
           headers: {
@@ -165,7 +161,7 @@ export default function TableBreak() {
   const adminCancelReady = async (email) => {
     try {
       const response = await axios.post(
-        "10.1.178.49:3001/users/dashboard/cancel_ready",
+        "/users/dashboard/cancel_ready",
         JSON.stringify({ email }),
         {
           headers: {
@@ -196,7 +192,7 @@ export default function TableBreak() {
   const sendMessage = () => {
     axios
       .post(
-        "10.1.178.49:3001/users/message",
+        "/users/message",
         {
           message,
         },

@@ -18,8 +18,8 @@ const customStyles = {
 // /users/register/confirm /users/confirm_forgot_password
 // JSON.parse(localStorage.getItem('changePasswordEmal'))
 const ModalEmail = ({ openModal, email, setOpenModal, setHomeText }) => {
-  const CODE_URL_FORGOT = "10.1.178.49:3001/users/confirm_forgot_password";
-  const CODE_URL = "10.1.178.49:3001/users/register/confirm";
+  const CODE_URL_FORGOT = "/users/confirm_forgot_password";
+  const CODE_URL = "/users/register/confirm";
   const emailForgot = localStorage.getItem("changePasswordEmal");
   const navigate = useNavigate();
 

@@ -3,7 +3,7 @@ import useAuth from "../hooks/useAuth";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 import axios from "../api/axios";
-const LOGIN_URL = "10.1.178.49:3001/users/login";
+const LOGIN_URL = "/users/login";
 
 const Login = () => {
   const { setAuth } = useAuth();

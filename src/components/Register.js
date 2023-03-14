@@ -11,7 +11,7 @@ import ModalEmail from "./Modal";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const REGISTER_URL = "10.1.178.49:3001/users/register";
+const REGISTER_URL = "/users/register";
 
 const Register = () => {
   let REGEX_EMAIL = new RegExp("@[digitain]+.[com]");

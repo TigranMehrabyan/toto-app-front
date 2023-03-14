@@ -9,7 +9,7 @@ import axios from "../api/axios";
 import { Link } from "react-router-dom";
 import ModalEmail from "./Modal";
 
-const REGISTER_URL = "10.1.178.49:3001/users/forgot_password";
+const REGISTER_URL = "/users/forgot_password";
 
 const ForgotPassword = () => {
   let REGEX_EMAIL = new RegExp("@[digitain]+.com");
